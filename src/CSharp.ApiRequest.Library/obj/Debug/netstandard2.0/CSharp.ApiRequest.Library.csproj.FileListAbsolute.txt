@@ -1,0 +1,9 @@
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\bin\Debug\netstandard2.0\CSharp.ApiRequest.Library.deps.json
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\bin\Debug\netstandard2.0\CSharp.ApiRequest.Library.dll
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\bin\Debug\netstandard2.0\CSharp.ApiRequest.Library.pdb
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.csprojAssemblyReference.cache
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.AssemblyInfoInputs.cache
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.AssemblyInfo.cs
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.csproj.CoreCompileInputs.cache
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.dll
+C:\Users\Myt\Desktop\Repositories\_POC\CSharp-Api-Request\src\CSharp.ApiRequest.Library\obj\Debug\netstandard2.0\CSharp.ApiRequest.Library.pdb
