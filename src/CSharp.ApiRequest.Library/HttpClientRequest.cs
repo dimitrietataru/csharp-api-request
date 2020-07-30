@@ -61,7 +61,7 @@ namespace CSharp.ApiRequest.Library
         {
             using var client = httpClientBuilder.Create(info);
 
-            var response = await client.PostAsync(info.Url, new StringContent(string.Empty), cancellationToken);
+            var response = await client.PostAsync(info.Url, null, cancellationToken);
             response.EnsureSuccessStatusCode();
         }
 
@@ -79,7 +79,7 @@ namespace CSharp.ApiRequest.Library
         {
             using var client = httpClientBuilder.Create(info);
 
-            var response = await client.PostAsync(info.Url, new StringContent(string.Empty), cancellationToken);
+            var response = await client.PostAsync(info.Url, null, cancellationToken);
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
@@ -101,7 +101,7 @@ namespace CSharp.ApiRequest.Library
         {
             using var client = httpClientBuilder.Create(info);
 
-            var response = await client.PutAsync(info.Url, new StringContent(string.Empty), cancellationToken);
+            var response = await client.PutAsync(info.Url, null, cancellationToken);
             response.EnsureSuccessStatusCode();
         }
 
@@ -119,7 +119,7 @@ namespace CSharp.ApiRequest.Library
         {
             using var client = httpClientBuilder.Create(info);
 
-            var response = await client.PutAsync(info.Url, new StringContent(string.Empty), cancellationToken);
+            var response = await client.PutAsync(info.Url, null, cancellationToken);
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
