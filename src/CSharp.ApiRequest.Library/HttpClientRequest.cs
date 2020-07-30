@@ -56,6 +56,15 @@ namespace CSharp.ApiRequest.Library
             return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
         }
 
+        public async Task PostAsync(
+            IRequestInfo info, CancellationToken cancellationToken = default)
+        {
+            using var client = httpClientBuilder.Create(info);
+
+            var response = await client.PostAsync(info.Url, null, cancellationToken);
+            response.EnsureSuccessStatusCode();
+        }
+
         public async Task PostAsync<TRequest>(
             IRequestInfo info, TRequest body, CancellationToken cancellationToken = default)
         {
@@ -70,7 +79,7 @@ namespace CSharp.ApiRequest.Library
         {
             using var client = httpClientBuilder.Create(info);
 
-            var response = await client.PostAsync(info.Url, new StringContent(string.Empty), cancellationToken);
+            var response = await client.PostAsync(info.Url, null, cancellationToken);
             response.EnsureSuccessStatusCode();
 
             return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
@@ -87,6 +96,15 @@ namespace CSharp.ApiRequest.Library
             return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
         }
 
+        public async Task PutAsync(
+            IRequestInfo info, CancellationToken cancellationToken = default)
+        {
+            using var client = httpClientBuilder.Create(info);
+
+            var response = await client.PutAsync(info.Url, null, cancellationToken);
+            response.EnsureSuccessStatusCode();
+        }
+
         public async Task PutAsync<TRequest>(
             IRequestInfo info, TRequest body, CancellationToken cancellationToken = default)
         {
@@ -94,6 +112,17 @@ namespace CSharp.ApiRequest.Library
 
             var response = await client.PutAsJsonAsync(info.Url, body, cancellationToken);
             response.EnsureSuccessStatusCode();
+        }
+
+        public async Task<TResult> PutAsync<TResult>(
+            IRequestInfo info, CancellationToken cancellationToken = default)
+        {
+            using var client = httpClientBuilder.Create(info);
+
+            var response = await client.PutAsync(info.Url, null, cancellationToken);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadAsAsync<TResult>(info.GetCancellationToken());
         }
 
         public async Task<TResult> PutAsync<TRequest, TResult>(
