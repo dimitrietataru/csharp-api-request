@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp.ApiRequest.Library\CSharp.ApiRequest.Library.csproj" />
+  </ItemGroup>
+
 
 </Project>
