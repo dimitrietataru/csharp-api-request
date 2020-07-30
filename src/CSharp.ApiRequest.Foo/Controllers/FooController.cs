@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CSharp.ApiRequest.Foo.Controllers
 {
     [ApiController]
+    [Produces("application/json")]
     public sealed class FooController : ControllerBase
     {
         [HttpGet]

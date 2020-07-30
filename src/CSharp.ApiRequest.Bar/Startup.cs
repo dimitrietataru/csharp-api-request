@@ -1,3 +1,4 @@
+using CSharp.ApiRequest.Bar.Communications.Interfaces;
 using CSharp.ApiRequest.Library.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -19,7 +20,9 @@ namespace CSharp.ApiRequest.Bar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(configuration);
+
             services.AddCommunicationDependencies();
+            services.AddScoped<IApiRequest, Communications.ApiRequest>();
 
             services.AddControllers();
         }
