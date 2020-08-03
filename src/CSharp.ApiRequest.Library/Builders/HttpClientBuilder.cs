@@ -8,9 +8,16 @@ namespace CSharp.ApiRequest.Library.Builders
 {
     public sealed class HttpClientBuilder : IHttpClientBuilder
     {
+        private readonly IHttpClientFactory httpClientFactory;
+
+        public HttpClientBuilder(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory;
+        }
+
         public HttpClient Create([NotNull] IRequestInfo requestInfo)
         {
-            var client = new HttpClient(); // TODO: Use IHttpClientFactory
+            var client = httpClientFactory.CreateClient();
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

@@ -1,6 +1,4 @@
-﻿using CSharp.ApiRequest.Library.Builders;
-using CSharp.ApiRequest.Library.Builders.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace CSharp.ApiRequest.Library.Extensions
 {
@@ -8,7 +6,8 @@ namespace CSharp.ApiRequest.Library.Extensions
     {
         public static IServiceCollection AddCommunicationDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IHttpClientBuilder, HttpClientBuilder>();
+            services.AddHttpClient();
+            services.AddScoped<Builders.Interfaces.IHttpClientBuilder, Builders.HttpClientBuilder>();
             services.AddScoped<IHttpClientRequest, HttpClientRequest>();
 
             return services;
