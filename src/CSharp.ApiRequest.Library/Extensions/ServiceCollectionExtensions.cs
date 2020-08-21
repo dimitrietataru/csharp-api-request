@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CSharp.ApiRequest.Library.Factories;
+using CSharp.ApiRequest.Library.Factories.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CSharp.ApiRequest.Library.Extensions
 {
@@ -8,6 +10,7 @@ namespace CSharp.ApiRequest.Library.Extensions
         {
             services.AddHttpClient();
             services.AddScoped<Builders.Interfaces.IHttpClientBuilder, Builders.HttpClientBuilder>();
+            services.AddScoped<ICancellationTokenFactory, CancellationTokenFactory>();
             services.AddScoped<IHttpClientRequest, HttpClientRequest>();
 
             return services;

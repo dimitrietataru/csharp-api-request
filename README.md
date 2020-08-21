@@ -1,5 +1,12 @@
 # C# API Request
 
+### Install
+``` powershell
+PM> Install-Package Microsoft.AspNet.WebApi.Client -Version 5.2.7
+PM> Install-Package Microsoft.Extensions.DependencyInjection.Abstractions -Version 3.1.7
+PM> Install-Package Microsoft.Extensions.Http -Version 3.1.7
+```
+
 ## APIs
 | API | HTTPS port | HTTP port |
 |:---:|:---:|:---:|

@@ -1,6 +1,7 @@
 ﻿using CSharp.ApiRequest.Bar.Communications.Dtos;
 using CSharp.ApiRequest.Bar.Communications.Interfaces;
 using CSharp.ApiRequest.Library;
+using CSharp.ApiRequest.Library.Extensions;
 using CSharp.ApiRequest.Library.Structure;
 using Microsoft.Extensions.Configuration;
 using System.Threading;
@@ -25,7 +26,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Get:WithResponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             return await httpRequest.GetAsync<ResponseDto>(requestInfo, cancellationToken);
         }
@@ -34,7 +35,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Get:WithoutResponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             await httpRequest.GetAsync(requestInfo, cancellationToken);
         }
@@ -43,7 +44,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Post:WithBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             return await httpRequest.PostAsync<RequestDto, ResponseDto>(requestInfo, dto, cancellationToken);
         }
@@ -52,7 +53,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Post:WithBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             await httpRequest.PostAsync<RequestDto>(requestInfo, dto, cancellationToken);
         }
@@ -61,7 +62,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Post:WithoutBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             return await httpRequest.PostAsync<ResponseDto>(requestInfo, cancellationToken);
         }
@@ -70,7 +71,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Post:WithoutBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             await httpRequest.PostAsync(requestInfo, cancellationToken);
         }
@@ -79,7 +80,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Put:WithBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             return await httpRequest.PutAsync<RequestDto, ResponseDto>(requestInfo, dto, cancellationToken);
         }
@@ -88,7 +89,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Put:WithBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             await httpRequest.PutAsync<RequestDto>(requestInfo, dto, cancellationToken);
         }
@@ -97,7 +98,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Put:WithoutBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             return await httpRequest.PutAsync<ResponseDto>(requestInfo, cancellationToken);
         }
@@ -106,7 +107,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Put:WithoutBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             await httpRequest.PutAsync(requestInfo, cancellationToken);
         }
@@ -115,7 +116,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Patch:WithBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             return await httpRequest.PatchAsync<RequestDto, ResponseDto>(requestInfo, dto, cancellationToken);
         }
@@ -124,7 +125,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             RequestDto dto, CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Patch:WithBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             await httpRequest.PatchAsync<RequestDto>(requestInfo, dto, cancellationToken);
         }
@@ -133,7 +134,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Patch:WithoutBodyAndWithReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             return await httpRequest.PatchAsync<ResponseDto>(requestInfo, cancellationToken);
         }
@@ -142,7 +143,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Patch:WithoutBodyAndWithoutReponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 180.Seconds());
 
             await httpRequest.PatchAsync(requestInfo, cancellationToken);
         }
@@ -151,7 +152,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Delete:WithResponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             return await httpRequest.DeleteAsync<ResponseDto>(requestInfo, cancellationToken);
         }
@@ -160,7 +161,7 @@ namespace CSharp.ApiRequest.Bar.Communications
             CancellationToken cancellationToken)
         {
             string url = configuration["Foo:Delete:WithoutResponse"];
-            var requestInfo = new RequestInfo(url, timeout: 3);
+            var requestInfo = new RequestInfo(url, timeout: 3.Minutes());
 
             await httpRequest.DeleteAsync(requestInfo, cancellationToken);
         }
