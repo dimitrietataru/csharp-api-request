@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace CSharp.ApiRequest.Library.Structure
 {
@@ -32,11 +31,6 @@ namespace CSharp.ApiRequest.Library.Structure
         public bool RequiresAuthorization()
         {
             return Auth?.WithAuthorization ?? false;
-        }
-
-        public CancellationToken GetCancellationToken()
-        {
-            return new CancellationTokenSource(Timeout).Token;
         }
     }
 }

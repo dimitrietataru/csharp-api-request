@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace CSharp.ApiRequest.Library.Structure.Interfaces
 {
@@ -12,6 +11,5 @@ namespace CSharp.ApiRequest.Library.Structure.Interfaces
         ICollection<IRequestHeader> Headers { get; }
 
         bool RequiresAuthorization();
-        CancellationToken GetCancellationToken();
     }
 }
