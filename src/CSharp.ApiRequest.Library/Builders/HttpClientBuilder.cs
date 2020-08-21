@@ -34,7 +34,7 @@ namespace CSharp.ApiRequest.Library.Builders
                 client.DefaultRequestHeaders.Add(header.Name, header.Value);
             }
 
-            client.Timeout = requestInfo.GetRequestTimeout();
+            client.Timeout = requestInfo.Timeout;
 
             return client;
         }

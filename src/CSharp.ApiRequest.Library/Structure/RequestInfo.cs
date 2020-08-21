@@ -8,7 +8,7 @@ namespace CSharp.ApiRequest.Library.Structure
 {
     public sealed class RequestInfo : IRequestInfo
     {
-        public RequestInfo(string url, int timeout, params IRequestHeader[] headers)
+        public RequestInfo(string url, TimeSpan timeout, params IRequestHeader[] headers)
         {
             Url = url;
             Auth = new RequestAuthorize();
@@ -16,7 +16,7 @@ namespace CSharp.ApiRequest.Library.Structure
             Headers = headers.ToList();
         }
 
-        public RequestInfo(string url, string jwt, int timeout, params IRequestHeader[] headers)
+        public RequestInfo(string url, string jwt, TimeSpan timeout, params IRequestHeader[] headers)
         {
             Url = url;
             Auth = new RequestAuthorize(jwt);
@@ -25,7 +25,7 @@ namespace CSharp.ApiRequest.Library.Structure
         }
 
         public string Url { get; }
-        public int Timeout { get; }
+        public TimeSpan Timeout { get; }
         public IRequestAuthorize Auth { get; }
         public ICollection<IRequestHeader> Headers { get; } = new List<IRequestHeader>();
 
@@ -34,14 +34,9 @@ namespace CSharp.ApiRequest.Library.Structure
             return Auth?.WithAuthorization ?? false;
         }
 
-        public TimeSpan GetRequestTimeout()
-        {
-            return new TimeSpan(0, Timeout, 0);
-        }
-
         public CancellationToken GetCancellationToken()
         {
-            return new CancellationTokenSource(GetRequestTimeout()).Token;
+            return new CancellationTokenSource(Timeout).Token;
         }
     }
 }
